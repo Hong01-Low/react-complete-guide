@@ -1,23 +1,45 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import './App.css';
-import DemoList from './components/Demo/DemoList';
-import Button from './components/UI/Button/Button';
+import Tasks from './components/Tasks/Tasks';
+import NewTask from './components/NewTask/NewTask';
+import useHttp from './hooks/use-http';
 
 function App() {
-  const [listTitle, setListTitle] = useState('My List');
+  const [tasks, setTasks] = useState([]);
 
-  const changeTitleHandler = useCallback(() => {
-    setListTitle('New Title');
-  }, []);
+  const { isLoading, error, sendRequest: fetchTasks } = useHttp();
 
-  const listItems = useMemo(() => [5, 3, 1, 10, 9], []);
+  useEffect(() => {
+    const transformTasks = (tasksObj) => {
+      const loadedTasks = [];
+
+      for (const taskKey in tasksObj) {
+        loadedTasks.push({ id: taskKey, text: tasksObj[taskKey].text });
+      }
+
+      setTasks(loadedTasks);
+    };
+
+    fetchTasks(
+      { url: 'https://react-http-6b4a6.firebaseio.com/tasks.json' },
+      transformTasks
+    );
+  }, [fetchTasks]);
+
+  const taskAddHandler = (task) => {
+    setTasks((prevTasks) => prevTasks.concat(task));
+  };
 
   return (
-    <div className="app">
-      <DemoList title={listTitle} items={listItems} />
-      <Button onClick={changeTitleHandler}>Change List Title</Button>
-    </div>
+    <React.Fragment>
+      <NewTask onAddTask={taskAddHandler} />
+      <Tasks
+        items={tasks}
+        loading={isLoading}
+        error={error}
+        onFetch={fetchTasks}
+      />
+    </React.Fragment>
   );
 }
 
