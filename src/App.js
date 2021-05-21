@@ -21,7 +21,7 @@ function App() {
     };
 
     fetchTasks(
-      { url: 'https://react-http-6b4a6.firebaseio.com/tasks.json' },
+      { url: 'https://react-http-61334-default-rtdb.asia-southeast1.firebasedatabase.app/tasks.json' },
       transformTasks
     );
   }, [fetchTasks]);
