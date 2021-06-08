@@ -6,9 +6,10 @@ import classes from './CartButton.module.css';
 const CartButton = (props) => {
   const dispatch = useDispatch();
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
-
+  console.log(8);
   const toggleCartHandler = () => {
     dispatch(uiActions.toggle());
+    console.log('9');
   };
 
   return (
