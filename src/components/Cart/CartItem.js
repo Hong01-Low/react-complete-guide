@@ -9,14 +9,6 @@ const CartItem = (props) => {
   const { title, quantity, total, price, id } = props.item;
   console.log('1');
 
-  const test = () => {
-    console.log('895>>>1',quantity);
-    if (quantity > 9){
-    return '999';
-      } else { return '111';
-    } };
-    console.log(test);
-
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
     console.log('2');
