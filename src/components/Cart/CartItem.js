@@ -7,7 +7,6 @@ const CartItem = (props) => {
   const dispatch = useDispatch();
 
   const { title, quantity, total, price, id } = props.item;
-  console.log('1');
 
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
@@ -29,7 +28,7 @@ const CartItem = (props) => {
       <header>
         <h3>{title}</h3>
         <div className={classes.price}>
-          ${total.toFixed(2)}{' '}
+        {quantity >= 10 ? '$'+(total-total*0.10) : '$'+total.toFixed(2)}
           <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span>
         </div>
       </header>
