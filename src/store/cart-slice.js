@@ -28,7 +28,11 @@ const cartSlice = createSlice({
         });
       } else {
         existingItem.quantity++;
-        existingItem.totalPrice = existingItem.totalPrice + newItem.price;
+        if (existingItem.quantity >= 10) {
+        existingItem.totalPrice = (newItem.price*existingItem.quantity)*0.90;  
+        } else {
+        existingItem.totalPrice = newItem.price*existingItem.quantity;
+        }
       }
     },
     removeItemFromCart(state, action) {
@@ -42,7 +46,11 @@ const cartSlice = createSlice({
         console.log('debug2',state.items);
       } else {
         existingItem.quantity--;
-        existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
+        if (existingItem.quantity >=10) {
+          existingItem.totalPrice = (existingItem.price*existingItem.quantity)*0.90;
+        } else {
+          existingItem.totalPrice = existingItem.price*existingItem.quantity;
+        }
       }
     }
   },
