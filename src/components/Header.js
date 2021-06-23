@@ -13,16 +13,10 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <h1>Redux Auth</h1>
+      <h1>Redux Personal Info System</h1>
       {isAuth && (
         <nav>
           <ul>
-            <li>
-              <a href='/'>My Products</a>
-            </li>
-            <li>
-              <a href='/'>My Sales</a>
-            </li>
             <li>
               <button onClick={logoutHandler}>Logout</button>
             </li>
