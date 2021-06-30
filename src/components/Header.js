@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <h1>Redux Personal Info System</h1>
+      <h1>Redux Personal Information Details</h1>
     </header>
   );
 };
