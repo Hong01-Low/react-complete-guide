@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 
 import Header from './components/Header';
 import Auth from './components/Auth';
-import UserProfile from './components/UserProfile';
 
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
     <Fragment>
       <Header />
       {!isAuth && <Auth />}
-      {isAuth && <UserProfile />}
     </Fragment>
   );
 }
