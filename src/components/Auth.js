@@ -15,7 +15,7 @@ const Auth = () => {
 
   return (
     <main className={classes.auth}>
-      <h2>-USERS DETAILS-</h2>
+      <h2>-USERS FORM-</h2>
       <section>
         <form onSubmit={submitHandler}>
         <div className={classes.control}>
@@ -38,14 +38,14 @@ const Auth = () => {
         </form>
       </section>
 ---------------------------------------------------------
-      <h2>USERS PROFILE MANAGEMENT</h2>
+      <h2>My Users Profile</h2>
       <table class="lists" id="personalLists" border="2.5" bgcolor="white" align="center">
       <thead>
       <tr>
           <th>NAME</th>
           <th>ADDRESS</th>
           <th>EMAIL</th>
-          <th>NO.PHONE</th>
+          <th>PASSWORD</th>
           <th>ACTIONS</th>
         </tr>
         </thead>
@@ -54,56 +54,56 @@ const Auth = () => {
           <td>Low Chun Hong</td>
           <td>Kuala Lumpur</td>
           <td>junhong@gmail.com</td>
-          <td>0167845956</td>
+          <td>20564</td>
           <td><button>Edit</button> | <button>Delete</button></td>
         </tr>
         <tr>
           <td>Low Xin Yee</td>
           <td>Serdang</td>
           <td>xinyee@gmail.com</td>
-          <td>0112415641</td>
+          <td>15641</td>
           <td><button>Edit</button> | <button>Delete</button></td>
         </tr>
         <tr>
           <td>Lim Sow Peik</td>
           <td>Bukit Mertajam</td>
           <td>sowpeik@gmail.com</td>
-          <td>0135815246</td>
+          <td>15246</td>
           <td><button>Edit</button> | <button>Delete</button></td>
         </tr>
         <tr>
           <td>Tang Yun Kee</td>
           <td>Pulau Pinang</td>
           <td>yunkee@gmail.com</td>
-          <td>0162256488</td>
+          <td>56488</td>
           <td><button>Edit</button> | <button>Delete</button></td>
         </tr>
         <tr>
           <td>Lim Shu Fen</td>
           <td>Kulim</td>
           <td>shufen@gmail.com</td>
-          <td>0192887522</td>
+          <td>87522</td>
           <td><button>Edit</button> | <button>Delete</button></td>
         </tr>
         <tr>
           <td>Ooi Shin Yi</td>
           <td>Ipoh</td>
           <td>shinyi@gmail.com</td>
-          <td>0113523565</td>
+          <td>23565</td>
           <td><button>Edit</button> | <button>Delete</button></td>
         </tr>
         <tr>
           <td>Chong Weng Hin</td>
           <td>Bukit Jalil</td>
           <td>wenghin@gmail.com</td>
-          <td>0164752013</td>
+          <td>52013</td>
           <td><button>Edit</button> | <button>Delete</button></td>
         </tr>
         <tr>
           <td>Teh Hwa Sheng</td>
           <td>Sungai Petani</td>
           <td>hwasheng@gmail.com</td>
-          <td>0191852423</td>
+          <td>52423</td>
           <td><button>Edit</button> | <button>Delete</button></td>
         </tr>
         </tbody>
